@@ -115,5 +115,3 @@ This project implements a **Role-Based Access Control (RBAC)** system, enabling 
 8. **Scalability Considerations**: Tips for optimizing the application in a production environment.
 9. **License**: Licensing information.
 10. **Contributing**: Guidelines for contributing to the project.
-
-This `README.md` provides a comprehensive guide for anyone who wants to set up, use, or contribute to the RBAC system.
