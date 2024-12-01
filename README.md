@@ -155,6 +155,9 @@ This schema provides a scalable and efficient way to manage users, roles, and pe
 
 This project demonstrates the implementation of **Role-Based Access Control (RBAC)** using Java and Spring Boot. It includes user, role, and permission management, along with many-to-many relationships for linking users to roles, roles to permissions. The database schema supports this functionality, providing an efficient way to manage access control in your application.
 
+## Future Plans
+1. **Integration with External Identity Providers (SSO)**:
+
 ---
 
 Feel free to contribute, report issues, or suggest improvements to this project.
