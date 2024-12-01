@@ -1,0 +1,319 @@
+{
+  "info": {
+    "_postman_id": "e21f8ed6-82c5-42d7-9b18-3dcb688df4b1",
+    "name": "RBAC API",
+    "description": "Postman collection for Role, Permission, User, and User-Role/Permission APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "uri",
+      "value": "http://localhost:8080/api",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Roles API",
+      "item": [
+        {
+          "name": "Get all roles",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/roles",
+              "host": ["{{uri}}"],
+              "path": ["roles"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get role by name",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/roles/{{roleName}}",
+              "host": ["{{uri}}"],
+              "path": ["roles", "{{roleName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new role",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{uri}}/roles",
+              "host": ["{{uri}}"],
+              "path": ["roles"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"ADMIN\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update an existing role",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{uri}}/roles",
+              "host": ["{{uri}}"],
+              "path": ["roles"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"USER\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a role by name",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{uri}}/roles/{{roleName}}",
+              "host": ["{{uri}}"],
+              "path": ["roles", "{{roleName}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Permissions API",
+      "item": [
+        {
+          "name": "Get all permissions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/permissions",
+              "host": ["{{uri}}"],
+              "path": ["permissions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get permission by name",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/permissions/{{permissionName}}",
+              "host": ["{{uri}}"],
+              "path": ["permissions", "{{permissionName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new permission",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{uri}}/permissions",
+              "host": ["{{uri}}"],
+              "path": ["permissions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"READ_PRIVILEGES\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update an existing permission",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{uri}}/permissions",
+              "host": ["{{uri}}"],
+              "path": ["permissions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"WRITE_PRIVILEGES\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a permission by name",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{uri}}/permissions/{{permissionName}}",
+              "host": ["{{uri}}"],
+              "path": ["permissions", "{{permissionName}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User API",
+      "item": [
+        {
+          "name": "Get all users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/users",
+              "host": ["{{uri}}"],
+              "path": ["users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get user by username",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{uri}}/users/{{userName}}",
+              "host": ["{{uri}}"],
+              "path": ["users", "{{userName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a new user",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{uri}}/users",
+              "host": ["{{uri}}"],
+              "path": ["users"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userName\": \"johndoe\", \"email\": \"johndoe@example.com\", \"password\": \"password123\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update an existing user",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{uri}}/users",
+              "host": ["{{uri}}"],
+              "path": ["users"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userName\": \"johndoe\", \"email\": \"john_updated@example.com\", \"password\": \"newpassword123\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a user by username",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{uri}}/users/{{userName}}",
+              "host": ["{{uri}}"],
+              "path": ["users", "{{userName}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Linking and Unlinking API",
+      "item": [
+        {
+          "name": "Assign Role to User",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{uri}}/users/{{userName}}/roles/{{roleName}}",
+              "host": ["{{uri}}"],
+              "path": ["users", "{{userName}}", "roles", "{{roleName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Role from User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{uri}}/users/{{userName}}/roles/{{roleName}}",
+              "host": ["{{uri}}"],
+              "path": ["users", "{{userName}}", "roles", "{{roleName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Assign Permission to Role",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{uri}}/roles/{{roleName}}/permissions/{{permissionName}}",
+              "host": ["{{uri}}"],
+              "path": ["roles", "{{roleName}}", "permissions", "{{permissionName}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Permission from Role",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{uri}}/roles/{{roleName}}/permissions/{{permissionName}}",
+              "host": ["{{uri}}"],
+              "path": ["roles", "{{roleName}}", "permissions", "{{permissionName}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
