@@ -51,18 +51,16 @@ public class DataInitializer implements CommandLineRunner {
         sysAdminRole.setPermissions(permissions);
         roleRepository.save(sysAdminRole);
 
-        User sysUser = userRepository.findByUserName("sys_user");
+        User sysUser = userRepository.findByUserName("sys_admin");
         if (sysUser == null) {
             sysUser = new User();
-            sysUser.setUserName("sys_user");
-            sysUser.setPassword("sys_user");
-            sysUser.setEmail("sys_user@gmail.com");
+            sysUser.setUserName("sys_admin");
+            sysUser.setPassword("sys_admin");
+            sysUser.setEmail("sys_admin@gmail.com");
 
             Set<Role> roles = new HashSet<>();
             roles.add(sysAdminRole);
             sysUser.setRoles(roles);
-
-            // Save the user
             userRepository.save(sysUser);
         }
     }
