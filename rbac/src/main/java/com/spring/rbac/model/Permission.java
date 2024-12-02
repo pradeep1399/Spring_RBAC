@@ -1,5 +1,6 @@
 package com.spring.rbac.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class Permission {
     private String permissionName;
 
     @ManyToMany(mappedBy = "permissions")
+    @JsonBackReference
     private Set<Role> roles;
 
 }

@@ -1,5 +1,6 @@
 package com.spring.rbac.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,13 +15,14 @@ import java.util.Set;
 public class Role {
 
     @Id
-    @Column(nullable = false)
+    @Column
     private String roleName;
 
     @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+    @JsonBackReference
+    private Set<User> users;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "role_permissions_mapping",
             joinColumns = @JoinColumn(name = "role_id"),
@@ -32,11 +34,11 @@ public class Role {
         return permissions;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(Set<User> users) {
         this.users = users;
     }
 
-    public String getName() {
+    public String getRoleName() {
         return roleName;
     }
 }
