@@ -21,4 +21,7 @@ public class Permission {
     @JsonBackReference
     private Set<Role> roles;
 
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
 }

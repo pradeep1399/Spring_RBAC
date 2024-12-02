@@ -41,4 +41,12 @@ public class Role {
     public String getRoleName() {
         return roleName;
     }
+
+    public void setPermissions(Set<Permission> permissions) {
+        this.permissions = permissions;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }
